@@ -1,0 +1,83 @@
+create database Somindb;
+use Somindb;
+
+create table empleado(
+
+id_empleado int not null,
+nombre varchar(45) not null,
+direccion varchar(45) not null,
+telefono varchar(45) not null,
+cargo varchar(45) not null,
+
+primary key(id_empleado)
+);
+
+create table cliente(
+id_cliente int not null,
+nombre varchar(45) not null,
+direccion varchar(45) not null,
+telefono varchar(45) not null,
+
+primary key (id_cliente)
+);
+
+
+create table venta(
+id_venta int not null,
+valor DOUBLE not null,
+fecha_hora DATETIME(10) not null,
+cliente  int not null,
+empleado int not null,
+
+primary key(id_venta)
+
+);
+
+create table proveedor(
+id_proveedor int not null,
+nombre varchar(45) not null,
+telefono varchar(45) not null,
+
+primary key(id_proveedor)
+
+
+);
+
+
+crete table producto(
+
+id_producto int not null,
+nombre varchar(45) not null,
+valor DOUBLE,
+existencias int,
+
+primary key(id_producyo)
+);
+
+create table gerente(
+id_gerente int not null,
+
+primary key(id_gerente)
+);
+
+
+
+constraint producto_venta__fk foreign key (id_producto) references producto(id_producto),
+
+);
+
+insert into producto values(1,"pizza", 5000,10);
+insert into producto values(2,"pollo", 11000,19);
+insert into producto values(3,"empanadas", 7000,21);
+insert into producto values(4,"cerveza", 10000,100);
+insert into producto values(5,"tequila", 25000,12);
+
+
+
+
+
+
+
+
+
+
